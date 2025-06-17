@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SectionTitle from "../components/SectionTitle";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
+import "../css/Project.css";
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -1,0 +1,82 @@
+/* Projects.css */
+
+.tg-project-section {
+  background: linear-gradient(to bottom, #f8fafc, #e0f2fe); /* Light elegant blue gradient */
+}
+
+.tg-project-container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.tg-project-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.04);
+}
+
+.tg-project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.15); /* soft indigo hover */
+}
+
+.tg-project-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #4f46e5; /* Indigo */
+}
+
+.tg-project-desc {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.tg-project-tech span {
+  background-color: #eef2ff; /* Light Indigo */
+  color: #4338ca;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.tg-project-tech span:hover {
+  background-color: #c7d2fe;
+}
+
+.tg-project-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.3s ease;
+}
+
+.tg-project-links a:hover {
+  color: #1e40af;
+}
+
+.tg-project-image {
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.tg-project-images::-webkit-scrollbar {
+  height: 8px;
+}
+
+.tg-project-images::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+.tg-project-images::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 10px;
+}
+
+.tg-project-image:hover {
+  transform: scale(1.03);
+}

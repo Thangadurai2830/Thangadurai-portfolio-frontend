@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* === GLOBAL RESET & SCROLL === */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden; 
+}
+
+/* Optional: Only show scrollbar if needed */
+body {
+  overflow-y: auto;  
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* === MAIN APP CONTAINER === */
+.tg-app-container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: hidden; /* ✅ Ensures inner sections don't cause horizontal scroll */
+}
+
+/* === SECTIONS === */
+section {
+  min-height: 100vh;
+  width: 100%;
+  padding: 4rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow-x: hidden; /* ✅ Prevent horizontal overflow from content */
+}
+
+/* === TEMPORARY OVERRIDE FOR TESTING === */
+section * {
+  opacity: 1 !important;
+  transform: none !important;
+}

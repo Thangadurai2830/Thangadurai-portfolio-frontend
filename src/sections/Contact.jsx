@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SectionTitle from "../components/SectionTitle";
 import SocialLinks from "../components/SocialLinks";
-
+import "../css/Contact.css"; // Ensure this path is correct
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {

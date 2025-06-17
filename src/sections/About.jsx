@@ -2,6 +2,8 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SectionTitle from "../components/SectionTitle";
+import profileImage from "../assets/profile.jpg"; // ✅ Ensure this path is correct
+import "../css/About.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,54 +11,69 @@ const About = () => {
   const aboutRef = useRef(null);
 
   useEffect(() => {
-    gsap.from(aboutRef.current, {
-      y: 50,
-      opacity: 0,
-      duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: aboutRef.current,
-        start: "top 80%",
-      },
-    });
+    const ctx = gsap.context(() => {
+      gsap.from(".about-img-wrapper", {
+        x: -120,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: aboutRef.current,
+          start: "top 85%",
+        },
+      });
+
+      gsap.from(".about-description", {
+        x: 120,
+        opacity: 0,
+        duration: 1.2,
+        delay: 0.3,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: aboutRef.current,
+          start: "top 85%",
+        },
+      });
+    }, aboutRef);
+
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section id="about" className="tg-about-section py-20 bg-gray-100">
-      <div className="tg-about-container container mx-auto px-6">
+    <section id="about" className="section-about">
+      <div className="container-about" ref={aboutRef}>
         <SectionTitle title="About Me" subtitle="Who I am and what I do" />
 
-        <div
-          ref={aboutRef}
-          className="tg-about-content flex flex-col md:flex-row items-center gap-10 max-w-5xl mx-auto mt-10"
-        >
+        <div className="content-about">
           {/* Profile Image */}
-          <div className="tg-about-image w-40 h-40 md:w-60 md:h-60 rounded-full overflow-hidden border-4 border-indigo-600 shadow-lg">
+          <div className="about-img-wrapper">
             <img
-              src="/assets/profile.jpg"
-              alt="Thangadurai Profile"
-              className="w-full h-full object-cover"
+              src={profileImage}
+              alt="Thangadurai"
+              className="about-img"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = "https://via.placeholder.com/240x240?text=No+Image";
+              }}
             />
           </div>
 
-          {/* About Text */}
-          <div className="tg-about-text text-center md:text-left space-y-4 md:space-y-6">
-            <h3 className="tg-about-heading text-xl md:text-2xl font-semibold text-gray-800">
-              I'm Thangadurai
-            </h3>
-            <p className="tg-about-para text-gray-600 text-base leading-relaxed">
-              A passionate Full Stack Developer specializing in{" "}
-              <span className="font-medium text-indigo-600">MERN stack</span> and{" "}
-              <span className="font-medium text-indigo-600">Python Django</span>. I build responsive web applications
-              with modern UI/UX and smooth animations using{" "}
-              <span className="font-medium text-indigo-600">GSAP</span>,{" "}
-              <span className="font-medium text-indigo-600">Tailwind</span>, and{" "}
-              <span className="font-medium text-indigo-600">React</span>.
+          {/* Text Content */}
+          <div className="about-description">
+            <h3 className="about-title">I'm Thangadurai</h3>
+            <p className="about-intro">
+              A creative Full Stack Developer with expertise in{" "}
+              <span className="highlight-text">MERN Stack</span> and{" "}
+              <span className="highlight-text">Python Django</span>. I craft
+              dynamic websites with beautiful UIs and smooth GSAP animations,
+              using <span className="highlight-text">React</span>,{" "}
+              <span className="highlight-text">Tailwind</span> and more.
             </p>
-            <p className="tg-about-extra text-gray-600">
-              Skilled in deploying cloud-ready apps, implementing REST APIs, and
-              integrating ML/DL models with web apps. I'm always eager to learn
-              and build something impactful.
+            <p className="about-extra">
+              I’m passionate about building intelligent systems, integrating
+              <span className="highlight-text"> ML/DL models</span>, and
+              deploying full-fledged applications that solve real-world
+              problems.
             </p>
           </div>
         </div>

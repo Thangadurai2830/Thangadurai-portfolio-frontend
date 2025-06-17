@@ -1,0 +1,76 @@
+/* Hero.css */
+
+.hero-wrapper {
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  color: #f4f4f4;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1rem;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 960px;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.hero-header {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.name-highlight {
+  color: #facc15;
+}
+
+.hero-tagline {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+  color: #e0e0e0;
+  font-family: "Poppins", sans-serif;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  background: #facc15;
+  color: #1f1c2c;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  box-shadow: 0 8px 20px rgba(250, 204, 21, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+  background: #fde68a;
+  color: #111827;
+  transform: scale(1.05);
+  box-shadow: 0 10px 24px rgba(250, 204, 21, 0.6);
+}
+
+.social-icons {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .hero-header {
+    font-size: 2.2rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.1rem;
+  }
+}

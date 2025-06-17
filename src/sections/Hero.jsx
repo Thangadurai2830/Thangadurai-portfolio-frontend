@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SocialLinks from "../components/SocialLinks";
+import "../css/Hero.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,34 +10,55 @@ const Hero = () => {
   const heroRef = useRef(null);
 
   useEffect(() => {
-    gsap.from(heroRef.current, {
-      y: 80,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: heroRef.current,
-        start: "top 90%",
-      },
-    });
+    const ctx = gsap.context(() => {
+      gsap.from(".hero-header", {
+        y: 60,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out",
+      });
+
+      gsap.from(".hero-tagline", {
+        y: 40,
+        opacity: 0,
+        delay: 0.4,
+        duration: 1,
+        ease: "power3.out",
+      });
+
+      gsap.from(".cta-button", {
+        scale: 0.9,
+        opacity: 0,
+        delay: 0.7,
+        duration: 0.8,
+        ease: "back.out(1.7)",
+      });
+
+      gsap.from(".social-icons", {
+        y: 30,
+        opacity: 0,
+        delay: 1,
+        duration: 1,
+        ease: "power2.out",
+      });
+    }, heroRef);
+
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section id="home" className="tg-hero-section bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 text-white py-32">
-      <div className="tg-hero-container container mx-auto px-6 text-center" ref={heroRef}>
-        <h1 className="tg-hero-title text-4xl md:text-5xl font-bold leading-tight">
-          Hi, I'm <span className="text-yellow-300">Thangadurai</span>
+    <section id="home" ref={heroRef} className="hero-wrapper">
+      <div className="hero-content">
+        <h1 className="hero-header">
+          Hello, I'm <span className="name-highlight">Thangadurai</span>
         </h1>
-        <p className="tg-hero-subtitle mt-4 text-lg md:text-xl text-white/90">
-          Full Stack Developer | MERN & Java | AI Enthusiast
+        <p className="hero-tagline">
+          Full Stack Developer | MERN & Java & Python | Freelancer
         </p>
-        <div className="tg-hero-social mt-8">
+        <div className="social-icons">
           <SocialLinks />
         </div>
-        <a
-          href="#contact"
-          className="tg-hero-btn inline-block mt-10 bg-white text-indigo-700 px-6 py-3 rounded-full font-semibold hover:bg-indigo-100 transition duration-300"
-        >
+        <a href="#contact" className="cta-button">
           Let's Connect
         </a>
       </div>

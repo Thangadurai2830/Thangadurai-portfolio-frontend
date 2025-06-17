@@ -1,4 +1,6 @@
 import React from "react";
+
+// ✅ Import all components correctly
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -9,20 +11,25 @@ import Projects from "./sections/Projects";
 import Certifications from "./sections/Certifications";
 import Achievements from "./sections/Achievements";
 import Contact from "./sections/Contact";
-
+import Education from "./sections/Education";
 const App = () => {
   return (
     <div className="tg-app-container">
+      {/* ✅ Navbar stays fixed at top */}
       <Navbar />
 
-      {/* Page Sections with Custom Classes */}
-      <section id="home" className="tg-home-section">
-        <Hero />
-      </section>
+      {/* ✅ Hero already includes <section id="home"> inside it */}
+      <Hero />
 
+      {/* ✅ Other sections wrapped here */}
       <section id="about" className="tg-about-section">
         <About />
       </section>
+
+      <section id="education">
+         <Education />
+      </section>
+
 
       <section id="skills" className="tg-skills-section">
         <Skills />
@@ -44,6 +51,7 @@ const App = () => {
         <Contact />
       </section>
 
+      {/* ✅ Footer at the bottom */}
       <Footer />
     </div>
   );

@@ -1,0 +1,57 @@
+/* Contact.css */
+
+.tg-contact-section {
+  background: linear-gradient(to bottom right, #f0f4ff, #ffffff); /* Soft gradient */
+}
+
+.tg-contact-card {
+  background-color: #f8fafc; /* subtle gray-blue */
+  border-radius: 1rem;
+  box-shadow: 0 12px 24px rgba(99, 102, 241, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.tg-contact-card:hover {
+  box-shadow: 0 16px 32px rgba(99, 102, 241, 0.12);
+}
+
+.tg-form-label {
+  color: #1e293b; /* slate-800 */
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.tg-form-input,
+.tg-form-textarea {
+  background-color: #fff;
+  border: 1px solid #d1d5db; /* gray-300 */
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tg-form-input:focus,
+.tg-form-textarea:focus {
+  border-color: #6366f1; /* indigo-500 */
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.tg-submit-btn {
+  background: linear-gradient(to right, #6366f1, #7c3aed);
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.85rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.tg-submit-btn:hover {
+  background: linear-gradient(to right, #4f46e5, #6d28d9);
+}
+
+.tg-social-text {
+  font-size: 0.95rem;
+  color: #64748b; /* slate-500 */
+}

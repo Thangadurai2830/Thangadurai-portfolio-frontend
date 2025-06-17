@@ -1,0 +1,61 @@
+/* Certifications.css */
+
+.tg-certifications-section {
+  background: linear-gradient(to bottom, #f0f4f8, #e0f2fe); /* Light blue gradient */
+}
+
+.tg-certifications-container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.tg-certifications-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.tg-cert-card {
+  background-color: #ffffff;
+  border-left: 6px solid #6366f1; /* Indigo border */
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tg-cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(99, 102, 241, 0.15);
+}
+
+.tg-cert-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #4338ca; /* Dark Indigo */
+}
+
+.tg-cert-provider {
+  font-size: 0.9rem;
+  color: #334155; /* Slate */
+  margin-top: 0.25rem;
+}
+
+.tg-cert-date {
+  font-size: 0.8rem;
+  color: #94a3b8; /* Muted slate */
+  font-style: italic;
+  margin-top: 0.25rem;
+}
+
+.tg-cert-link {
+  margin-top: 0.5rem;
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #6366f1;
+  transition: color 0.3s ease;
+}
+
+.tg-cert-link:hover {
+  text-decoration: underline;
+  color: #4338ca;
+}

@@ -2,11 +2,12 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SectionTitle from "../components/SectionTitle";
-
+import "../css/Skills.css";
+import "../assets/html.png"
 gsap.registerPlugin(ScrollTrigger);
 
 const skills = [
-  { name: "HTML", icon: "/assets/skills/html.png" },
+  { name: "HTML", icon: "/assets/html.png" },
   { name: "CSS", icon: "/assets/skills/css.png" },
   { name: "JavaScript", icon: "/assets/skills/javascript.png" },
   { name: "React", icon: "/assets/skills/react.png" },
@@ -16,8 +17,18 @@ const skills = [
   { name: "Tailwind CSS", icon: "/assets/skills/tailwind.png" },
   { name: "GSAP", icon: "/assets/skills/gsap.png" },
   { name: "Django", icon: "/assets/skills/django.png" },
+  { name: "Flask", icon: "/assets/skills/flask.png" },
   { name: "MySQL", icon: "/assets/skills/mysql.png" },
   { name: "Git & GitHub", icon: "/assets/skills/git.png" },
+  { name: "Python", icon: "/assets/skills/python.png" },
+  { name: "Bootstrap", icon: "/assets/skills/bootstrap.png" },
+  { name: "Postman", icon: "/assets/skills/postman.png" },
+  { name: "Java", icon: "/assets/skills/Java.png" },
+  
+  
+
+  
+
 ];
 
 const Skills = () => {
